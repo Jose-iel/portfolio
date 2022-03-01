@@ -1,0 +1,206 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: #222;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+.layer{
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 100%;
+    height: 100vh;
+    box-shadow: 10px 0 10px rgba(0,0,0,0.25);
+}
+
+.layer.layer1{
+    background: #03a9f4;
+    transform: skewX(-45deg) translateX(0);
+    z-index: 1;
+}
+
+.layer.layer2{
+    background: #fff;
+    transform: skewX(-45deg) translateX(-100px);
+    z-index: 3;
+}
+
+.layer.layer3{
+    background: #ff3161;
+    transform: skewX(-45deg) translateX(-200px);
+    z-index: 5;
+}
+
+.layer.layer4{
+    background: #222;
+    transform: skewX(-45deg) translateX(-300px);
+    z-index: 10;
+}
+
+.layer.layer5{
+    background: #ff3161;
+    transform: skewX(45deg) translateX(0px);
+    z-index: 2;
+}
+
+.layer.layer6{
+    background: #03a9f4;
+    transform: skewX(45deg) translateX(-100px);
+    z-index: 4;
+}
+
+.layer.layer7{
+    background: #fff;
+    transform: skewX(45deg) translateX(-200px);
+    z-index: 6;
+}
+
+.layer.layer8{
+    background: #222;
+    transform: skewX(45deg) translateX(-300px);
+    z-index: 8;
+}
+
+.layer.layer9{
+    background: transparent;
+    transform: skewX(45deg) translateX(-300px);
+    z-index: 10;
+    transition: 0.8s;
+}
+
+.layer.layer9.activeLayer{
+    background: #222;
+    transform: skewX(0deg) translateX(-200px);
+    z-index: 10;
+}
+
+.informations{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    margin-left: 40px;
+    margin-top: 40px;
+    left: 0;
+    top: 0;
+    z-index: 99;
+    width: 350px;
+    font-family: 'Shippori Antique B1', sans-serif;
+    color: transparent;
+}
+
+.informations.activeInfo{
+    color: #fff;
+    transition-delay: 0.6s;
+} 
+
+.informations h1{
+    margin-bottom: 20px;
+    font-size: 32px;
+} 
+
+.informations button{
+    position: absolute;
+    font-size: 30px;
+    padding: 0;
+    width: 34px;
+    height: 30px;
+    border: none;
+    background: transparent;
+    color: transparent;
+    cursor: pointer;
+    margin-left: 340px;
+    margin-top: -20px;
+    transition-delay: 0s;
+} 
+
+.btn-close.activeClose{
+    color: #fff;
+    transition-delay: 0.6s;
+}
+
+
+.containerMenu{
+    z-index: 99;
+    margin-right: 70px;
+    display: flex;
+}
+
+.title{
+    font-family: 'Shippori Antique B1', sans-serif;
+    color: #fff;
+    font-size: 42px;
+    margin-right: 30px;
+    transition: 0.5s;
+    transition-delay: 0.8s;
+}
+.title.activeTitle{
+    margin-top: 60px;
+    transition-delay: 0s;
+}
+
+.navigation{
+    position: relative;
+    width: 70px;
+    height: 70px;
+    background-color: #212532;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    transition-delay: 0.8s;
+}
+
+.navigation.active{
+    width: 200px;
+    height: 200px;
+    transition-delay: 0s;
+}
+
+.navigation span{
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 50%;
+    transform: translate(calc(12px * var(--x)), calc(12px * var(--y)));
+    transition: transform 0.5s, width 0.5s, height 0.5s, background-color 0.5s;
+    transition-delay: calc(0.1s * var(--i));
+}
+
+.navigation.active span{
+    width: 45px;
+    height: 45px;
+    background-color: #333849;
+    transform: translate(calc(60px * var(--x)), calc(60px * var(--y)));
+}
+
+.navigation span ion-icon {
+    transition: 0.5s;
+    font-size: 0em;
+}
+
+.navigation.active span ion-icon {
+    font-size: 1.35em;
+    color: #fff;
+}
+
+.navigation.active span:hover ion-icon{
+    color: #2dfc52;
+    filter: drop-shadow(0 0 0.5px #2dfc52) drop-shadow(0 0 5px #2dfc52) drop-shadow(0 0 15px #2dfc52)
+}

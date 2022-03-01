@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Antique+B1&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section>
+        <div class="informations">
+            <h1 id="titulo"></h1>
+            <button onclick="fecharModal()" class="btn-close"><ion-icon name="close-circle-outline"></ion-icon></button>
+            <p id="conteudo"></p>
+        </div>
+
+        <div class="layer layer1"></div>
+        <div class="layer layer2"></div>
+        <div class="layer layer3"></div>
+        <div class="layer layer4"></div>
+        <div class="layer layer5"></div>
+        <div class="layer layer6"></div>
+        <div class="layer layer7"></div>
+        <div class="layer layer8"></div>
+        <div class="layer layer9"></div>
+
+        <div class="containerMenu">
+            <h1 class="title">José Castro</h1>
+
+            <div class="navigation">
+                <span style="--i:0;--x:-1;--y:0"><ion-icon onclick="react()" name="logo-react"></ion-icon></span>
+                <span style="--i:1;--x:1;--y:0"><ion-icon onclick="more()" name="add-circle-outline"></ion-icon></span>
+                <span style="--i:2;--x:0;--y:-1"><ion-icon onclick="css()" name="logo-css3"></ion-icon></span>
+                <span style="--i:3;--x:0;--y:1">
+                    <a href="https://www.linkedin.com/in/jos%C3%A9-henrique-iel-de-castro-22b0021b9/" target="_blank">
+                        <ion-icon name="logo-linkedin"></ion-icon>
+                    </a>
+                </span>
+                <span style="--i:4;--x:1;--y:1">
+                    <a href="https://www.instagram.com/jos3_henriq/" target="_blank">
+                        <ion-icon name="logo-instagram"></ion-icon>
+                    </a>
+                </span>
+                <span style="--i:5;--x:-1;--y:-1"><ion-icon onclick="html()" name="logo-html5"></ion-icon></span>
+                <span style="--i:6;--x:0;--y:0"><ion-icon onclick="node()" name="logo-nodejs"></ion-icon></span>
+                <span style="--i:7;--x:-1;--y:1">
+                    <a href="https://github.com/Jose-iel" target="_blank">
+                        <ion-icon name="logo-github"></ion-icon>
+                    </a>
+                </span>
+                <span style="--i:8;--x:1;--y:-1"><ion-icon onclick="javascript()" name="logo-javascript"></ion-icon></span>
+            </div>
+        </div>    
+    </section>
+
+    <script>
+
+        let data = {
+            reactjs:{
+                title: "ReactJS",
+                content: "Aprendi ReactJS na instituição RocketSeat com um conteúdo fantástico onde consegui absorver muito conhecimento o React me ajudou muito com ele aprendi construir sites incríveis e com muitas funcionalidades, já fiz diversas aplicações em React e sempre estou buscando mais conhecimento."
+            },
+
+            html:{
+                title: "HTML5",
+                content: "Aprendi e dominei o HTML e foi ele que me ajudou a ser um desenvolvedor web tenho orgulho do meu trabalho e realmente me descobri naquilo que eu amo mesmo existindo diversos frameworks eu sempre vou amar esse carinha aqui."
+            },
+
+            css:{
+                title: "CSS3",
+                content: "Acredito que não preciso nem explicar o quanto o CSS é incrível é uma obra prima que te possibilita a criar coisas incríveis como esse site que você está vendo agora, ele foi feito com CSS3 puro."
+            },
+
+            javascript:{
+                title: "JavaScript",
+                content: "O JavaScript é uma linguagem de programação extraordinária a cada passo que eu dou eu me sinto mais convencido a aprender cada dia mais ele trás diversas facilidades para um desenvolvimento rápido e limpo, não se engane esse site que estamos tem JavaScript também."
+            },
+
+            nodejs:{
+                title: "NodeJS",
+                content: "Eu aprendi NodeJS a pouco tempo e ainda estou estudando mas vejo que é uma excelente tecnologia para back end, Api e muito mais, e com um conhecimento amplo em JavaScript fica mais fácil de aprender e dominar essa tecnologia."
+            },
+
+            more:{
+                title: "Mais sobre meus conhecimentos",
+                content: "Aqui é um overview de tudo que aprendi nessa e venho aprendendo nessa caminhada como dev dentre esses estão: HTML5, CSS3, JavaScript, NodeJS, ReactJS, ReactNative, Styled Components, Chakra Ui, SQL e Selenium. Meu nome é José Henrique Iel tenho 19 anos e hoje atuo como desenvolvedor Front-End Júnior, agradeço por você tirar um pouquinho do seu tempo para ver meu trabalho, deixei minhas redes sociais no meu agradeço se puder me seguir e caso queira saber algo mais fique a vontade para me chamar, abraço!"
+            }
+        };
+
+        let navigation = document.querySelector('.navigation');
+        let title = document.querySelector('.title');
+
+        let titulo = document.getElementById('titulo');
+        let conteudo = document.getElementById('conteudo');
+
+        let layer9 = document.querySelector('.layer9');
+        let informations = document.querySelector('.informations');
+        let btnClose = document.querySelector('.btn-close');
+
+        navigation.onclick = function(){
+            navigation.classList.toggle('active');
+            title.classList.toggle('activeTitle');
+        }
+
+        function react(){ 
+            if(layer9.classList.contains("activeLayer")){
+                titulo.innerHTML = data.reactjs.title;
+                conteudo.innerHTML = data.reactjs.content;
+            }else{
+                layer9.classList.toggle('activeLayer');
+                btnClose.classList.toggle('activeClose');
+                informations.classList.toggle('activeInfo');
+                titulo.innerHTML = data.reactjs.title;
+                conteudo.innerHTML = data.reactjs.content;
+            }     
+        }
+        function more(){
+            if(layer9.classList.contains("activeLayer")){
+                titulo.innerHTML = data.more.title;
+                conteudo.innerHTML = data.more.content;
+            }else{
+                layer9.classList.toggle('activeLayer'); 
+                btnClose.classList.toggle('activeClose');
+                informations.classList.toggle('activeInfo');
+                titulo.innerHTML = data.more.title;
+                conteudo.innerHTML = data.more.content;
+            }
+        }
+        function css(){
+            if(layer9.classList.contains("activeLayer")){
+                titulo.innerHTML = data.css.title;
+                conteudo.innerHTML = data.css.content;
+            }else{
+                layer9.classList.toggle('activeLayer'); 
+                btnClose.classList.toggle('activeClose');
+                informations.classList.toggle('activeInfo');
+                titulo.innerHTML = data.css.title;
+                conteudo.innerHTML = data.css.content;
+            }
+        }
+        function html(){
+            if(layer9.classList.contains("activeLayer")){
+                titulo.innerHTML = data.html.title;
+                conteudo.innerHTML = data.html.content;
+            }else{
+                layer9.classList.toggle('activeLayer');
+                btnClose.classList.toggle('activeClose'); 
+                informations.classList.toggle('activeInfo');
+                titulo.innerHTML = data.html.title;
+                conteudo.innerHTML = data.html.content;
+            }
+        }
+        function node(){
+            if(layer9.classList.contains("activeLayer")){
+                titulo.innerHTML = data.nodejs.title;
+                conteudo.innerHTML = data.nodejs.content;
+            }else{
+                layer9.classList.toggle('activeLayer'); 
+                btnClose.classList.toggle('activeClose');
+                informations.classList.toggle('activeInfo');
+                titulo.innerHTML = data.nodejs.title;
+                conteudo.innerHTML = data.nodejs.content;
+            }
+        }
+        function javascript(){
+            if(layer9.classList.contains("activeLayer")){
+                titulo.innerHTML = data.javascript.title;
+                conteudo.innerHTML = data.javascript.content;
+            }else{
+                layer9.classList.toggle('activeLayer'); 
+                btnClose.classList.toggle('activeClose');
+                informations.classList.toggle('activeInfo');
+                titulo.innerHTML = data.javascript.title;
+                conteudo.innerHTML = data.javascript.content;
+            }
+        }
+
+        function fecharModal(){
+            layer9.classList.remove('activeLayer'); 
+            btnClose.classList.remove('activeClose');
+            informations.classList.remove('activeInfo');
+            titulo.innerHTML = "";
+            conteudo.innerHTML = "";
+        }
+    </script>
+</body>
+</html>
